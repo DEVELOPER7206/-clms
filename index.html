@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clms</title>
+    <!-- ====================css-link================== -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- ====================css-link================== -->
+</head>
+
+<body>
+
+    <!-------------------------------popup-start-------------------------------->
+    <div class="popup" aria-hidden="false">
+        <div class="contact-form">
+            <button type="button" class="popup-close" aria-label="Close popup">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="contact-form-head">
+                <span>Project Enquiry</span>
+                <h2>Tell Us About Your Project</h2>
+                <p>Fill in the details below and our team will contact you.</p>
+            </div>
+            <form id="contactForm" action="#" method="post" novalidate="">
+                <div class="row g-3">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                        <div class="form-group">
+                            <label for="fullName">Full Name <span>*</span></label>
+                            <div class="input-wrap">
+                                <i class="fa-regular fa-user"></i>
+                                <input type="text" id="fullName" name="name" placeholder="Your name" autocomplete="name"
+                                    required="">
+                            </div>
+                            <small class="form-error"></small>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                        <div class="form-group">
+                            <label for="email">Email Address <span>*</span></label>
+                            <div class="input-wrap">
+                                <i class="fa-regular fa-envelope"></i>
+                                <input type="email" id="email" name="email" placeholder="you@company.com"
+                                    autocomplete="email" required="">
+                            </div>
+                            <small class="form-error"></small>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <div class="input-wrap">
+                                <i class="fa-solid fa-phone"></i>
+                                <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX"
+                                    autocomplete="tel">
+                            </div>
+                            <small class="form-error"></small>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                        <div class="form-group">
+                            <label for="service">Interested In <span>*</span></label>
+                            <div class="input-wrap select-wrap">
+                                <i class="fa-solid fa-layer-group"></i>
+                                <select id="service" name="service" required="">
+                                    <option value="">Select a service</option>
+                                    <option value="web-development">Web Development</option>
+                                    <option value="ui-ux-design">UI/UX Design</option>
+                                    <option value="wordpress">WordPress Development</option>
+                                    <option value="mobile-app">Mobile App Development</option>
+                                    <option value="ecommerce">E-Commerce Solutions</option>
+                                    <option value="digital-marketing">Digital Marketing</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <small class="form-error"></small>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="subject">Project Subject <span>*</span></label>
+                            <div class="input-wrap">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                                <input type="text" id="subject" name="subject" placeholder="What can we help you with?"
+                                    required="">
+                            </div>
+                            <small class="form-error"></small>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="message">Project Details <span>*</span></label>
+                            <div class="input-wrap textarea-wrap">
+                                <i class="fa-regular fa-comment-dots"></i>
+                                <textarea id="message" name="message"
+                                    placeholder="Tell us about your project, goals and requirements..."
+                                    required=""></textarea>
+                            </div>
+                            <small class="form-error"></small>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-submit-wrap">
+                            <button type="submit" class="form-submit">
+                                <span>Send Message</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!------------------------------------------popup-end------------------------------->
+    <!-- ==================header-start==================== -->
+    <header>
+        <div class="container">
+            <div class="InnHeader">
+                <div class="row">
+                    <div class="col-xxl-1 col-xl-3 col-lg-2 col-md-2 col-sm-3 col-3">
+                        <a class="header-logo" href="index.html">
+                            <img src="assets/logo/header-logo.png" alt="" />
+                        </a>
+                    </div>
+                    <div class="col-xxl-8 col-xl-9 col-lg-10 col-md-8 col-sm-9 col-9">
+                        <nav>
+                            <div class="sideber">
+                                <ul class="navication">
+                                    <li><a class="current-menu-item" href="">Home</a></li>
+                                    <li><a href="about.html">about</a></li>
+                                    <li><a href="services.html">Services</a></li>
+                                    <li><a href="showcase.html">Showcase</a></li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                </ul>
+                                <a href=""></a>
+                            </div>
+                            <div class="button-area">
+                                <a class="Quote-btn" href="">Get a Free Quote</a>
+                                <button class="humberger-cross" type="button" aria-label="Toggle menu"></button>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ==================header-end==================== -->
+    <!-- ====================hero-section-start================== -->
+    <section class="hero-section">
+        <div class="hero-inner-section">
+            <div class="hero-bgimg">
+                <img src="assets/images/hero-bg.png" alt="" />
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-5 col-xl-8 col-lg-9 col-md-9 col-sm-10 col-12">
+                        <div class="hero-text">
+                            <h1>Make Space for What Comes Next.</h1>
+                            <p>Professional demolition and hazardous material removal for residential, commercial, and
+                                industrial projects.</p>
+                            <div class="hero-btn">
+                                <a class="Quote-btn" href="">Get a Free Quote</a>
+                                <a class="explore-btn" href="">Explore Our Services</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ===================hero-section-end=================== -->
+    <!-- ===================leram-cms-start=================== -->
+    <section class="learm-clms">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-6 col-sm-6 col-12">
+                    <div class="learn-titel">
+                        <h2>Experience That Makes Difficult Projects Simpler.</h2>
+                    </div>
+                </div>
+                <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-6 col-sm-6 col-12">
+                    <div class="learn-pralist">
+                        <p>CLMS Demolition provides professional demolition, abatement, and environmental remediation
+                            services across Alberta. With more than 20 years of combined hands-on experience, our team
+                            helps homeowners, contractors, and commercial clients safely clear, remove, and prepare
+                            properties for what comes next.</p>
+                        <a class="Quote-btn" href="about.html">Learn ClMS</a>
+                    </div>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="clms-img">
+                        <img src="assets/images/clms-banner.png" alt="" />
+                    </div>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="experienceBox">
+                        <h3>Safety & Expertise That Move Projects Forward</h3>
+                        <p>Every project we undertake combines experienced professionals, careful planning, modern
+                            equipment, and safety-focused practices to deliver controlled demolition and remediation
+                            from start to finish.</p>
+                        <div class="exprience-list">
+                            <div class="round">
+                                <div class="round-check">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <p>Experienced Demolition & Remediation Team</p>
+                            </div>
+                            <div class="round">
+                                <div class="round-check">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <p>Safety-First Site Planning & Execution</p>
+                            </div>
+                            <div class="round">
+                                <div class="round-check">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <p>Modern Equipment & Controlled Demolition</p>
+                            </div>
+                            <div class="round">
+                                <div class="round-check">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <p>Responsible Hazardous Material Handling</p>
+                            </div>
+                            <div class="round">
+                                <div class="round-check">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <p>Efficient Cleanup & Site Preparation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ===================leram-cms-end=================== -->
+    <!-- ===================what-section-start=================== -->
+    <section class="what-section">
+        <div class="container">
+            <div class="pannel">
+                <div class="row">
+                    <div class="col-xxl-5 col-xl-5 col-lg-8 col-md-8 col-sm-10 col-12">
+                        <div class="what-titel">
+                            <h2>What We Do</h2>
+                            <p>From controlled demolition to hazardous material removal, CLMS provides safe,
+                                professional
+                                solutions that prepare your property for its next stage.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pannel-img">
+                <div class="row">
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="what-img">
+                            <img src="assets/images/what-img.png" alt="" />
+                            <div class="what-textbox">
+                                <div class="what-text">
+                                    <h3>Interior & Exterior Demolition</h3>
+                                </div>
+                                <div class="what-btn">
+                                    <a class="explore-btn" href="">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="what-img">
+                            <img src="assets/images/what-img1.png" alt="" />
+                            <div class="what-textbox">
+                                <div class="what-text">
+                                    <h3>Full & Selective Demolition</h3>
+                                </div>
+                                <div class="what-btn">
+                                    <a class="explore-btn" href="">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="what-img">
+                            <img src="assets/images/what-img2.png" alt="" />
+                            <div class="what-textbox">
+                                <div class="what-text">
+                                    <h3>Asbestos Abatement</h3>
+                                </div>
+                                <div class="what-btn">
+                                    <a class="explore-btn" href="">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="what-img">
+                            <img src="assets/images/what-img3.png" alt="" />
+                            <div class="what-textbox">
+                                <div class="what-text">
+                                    <h3>Mold Remediation</h3>
+                                </div>
+                                <div class="what-btn">
+                                    <a class="explore-btn" href="">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="what-pannelbtn">
+                <a class="Quote-btn" href="services.html">View All Services</a>
+            </div>
+        </div>
+    </section>
+    <!-- ===================what-section-end=================== -->
+    <!-- ==================work-pagination-start==================== -->
+    <section class="work-pagination">
+        <div class="container">
+            <div class="work-titel">
+                <h2>How We Work</h2>
+            </div>
+            <div class="row">
+                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="work-slider-head">
+                        <div class="work-navigation">
+                            <button class="work-prev" type="button" aria-label="Previous">
+                                <svg width="65" height="15" viewBox="0 0 65 15" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0.293137 8.07112C-0.0973892 7.6806 -0.0973892 7.04743 0.293137 6.65691L6.6571 0.292946C7.04762 -0.0975785 7.68079 -0.0975785 8.07131 0.292946C8.46184 0.68347 8.46184 1.31664 8.07131 1.70716L2.41446 7.36401L8.07131 13.0209C8.46184 13.4114 8.46184 14.0446 8.07131 14.4351C7.68079 14.8256 7.04762 14.8256 6.6571 14.4351L0.293137 8.07112ZM64.3965 7.36401V8.36401H1.00024V7.36401V6.36401H64.3965V7.36401Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </button>
+                            <button class="work-next" type="button" aria-label="Next">
+                                <svg width="65" height="15" viewBox="0 0 65 15" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M64.1033 8.07112C64.4939 7.6806 64.4939 7.04743 64.1033 6.65691L57.7394 0.292946C57.3489 -0.0975785 56.7157 -0.0975785 56.3252 0.292946C55.9346 0.68347 55.9346 1.31664 56.3252 1.70716L61.982 7.36401L56.3252 13.0209C55.9346 13.4114 55.9346 14.0446 56.3252 14.4351C56.7157 14.8256 57.3489 14.8256 57.7394 14.4351L64.1033 8.07112ZM0 7.36401V8.36401H63.3962V7.36401V6.36401H0V7.36401Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="swiper workSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="work-card">
+                                        <div class="work-card-text">
+                                            <h3>Assess</h3>
+                                            <p>We understand your property, project requirements, and potential hazards.
+                                            </p>
+                                        </div>
+                                        <div class="work-cardimg">
+                                            <img src="assets/images/assess-img.png" alt="Assess">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="work-card">
+                                        <div class="work-card-text">
+                                            <h3>Plan</h3>
+                                            <p>We develop the appropriate scope, safety approach, and project plan.</p>
+                                        </div>
+                                        <div class="work-cardimg">
+                                            <img src="assets/images/plan-img.png" alt="Assess">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="work-card">
+                                        <div class="work-card-text">
+                                            <h3>Prepare</h3>
+                                            <p>We coordinate the required documentation, permits, equipment, and site
+                                                preparation.</p>
+                                        </div>
+                                        <div class="work-cardimg">
+                                            <img src="assets/images/prepare-img.png" alt="Assess">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="work-card">
+                                        <div class="work-card-text">
+                                            <h3>Execute</h3>
+                                            <p>Our team carries out the demolition or remediation safely and
+                                                efficiently.</p>
+                                        </div>
+                                        <div class="work-cardimg">
+                                            <img src="assets/images/execute-img.png" alt="Assess">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="work-card">
+                                        <div class="work-card-text">
+                                            <h3>Clean Up</h3>
+                                            <p>Materials and debris are removed and the site is prepared for what comes
+                                                next.</p>
+                                        </div>
+                                        <div class="work-cardimg">
+                                            <img src="assets/images/clean-img.png" alt="Assess">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====================work-pagination-start================== -->
+    <!-- ==================show-case-section==================== -->
+    <section class="show-case show-case-index">
+        <div class="container">
+            <div class="titel-contentcase">
+                <h2>Show Case</h2>
+            </div>
+            <div class="row">
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                    <a href="showcase.html" class="show-img">
+                        <img src="assets/images/show-img.png" alt="" />
+                        <div class="show-text">
+                            <h3>Residential Demolition</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                    <a href="showcase.html" class="show-img1">
+                        <img src="assets/images/show-img.png" alt="" />
+                    </a>
+                </div>
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+                    <a href="showcase.html" class="show-wrapimg">
+                        <img src="assets/images/show-img3.png" alt="" />
+                    </a>
+                </div>
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+                    <a href="showcase.html" class="show-wrapimg">
+                        <img src="assets/images/show-img4.png" alt="" />
+                    </a>
+                </div>
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+                    <a href="showcase.html" class="show-wrapimg">
+                        <img src="assets/images/show-img5.png" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div class="show-btn">
+                <a class="Quote-btn" href="showcase.html">View All</a>
+            </div>
+        </div>
+    </section>
+    <!-- ==================show-case-section==================== -->
+    <!-- ================counting-start====================== -->
+    <section class="counting-section">
+        <div class="counting-banner">
+            <img src="assets/images/counting-banner.png" alt="" />
+            <div class="counting-text-box">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-4 col-md-4 col-4">
+                            <div class="counting-text">
+                                <h2>Immediately establish credibility.</h2>
+                            </div>
+                        </div>
+                        <div class="col-xxl-8 col-xl-8 col-lg-8 col-sm-8 col-md-8 col-8">
+                            <div class="counting-list">
+                                <p>Every project we undertake combines experienced professionals, careful planning,
+                                    modern equipment, and safety-focused practices to deliver controlled demolition and
+                                    remediation from start to finish.</p>
+                                <div class="auto-count">
+                                    <div class="count-area">
+                                        <h3>20+ Years</h3>
+                                        <p>Combined Experience</p>
+                                    </div>
+                                    <div class="count-area">
+                                        <h3>400+</h3>
+                                        <p>Projects Completed</p>
+                                    </div>
+                                    <div class="count-area">
+                                        <h3>300+</h3>
+                                        <p>Satisfied Clients</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="from-section">
+                <div class="container">
+                    <div class="form-img-detailes">
+                        <div class="row">
+                            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5">
+                                <div class="from-img">
+                                    <img src="assets/images/form-img.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-7 col-7">
+                                <form id="" class="user-contact" action="" method="post">
+                                    <div class="user-titel">
+                                        <h2>Contact Us</h2>
+                                    </div>
+                                    <div class="submit-wrap">
+                                        <div class="user-submit">
+                                            <label for="firest-name">First Name</label>
+                                            <input id="firest-name" type="text" placeholder="" required>
+                                        </div>
+                                        <div class="user-submit">
+                                            <label for="last-name">Last Name</label>
+                                            <input id="last-name" type="text" placeholder="" required>
+                                        </div>
+                                    </div>
+                                    <div class="submit-wrap">
+                                        <div class="user-submit">
+                                            <label for="email">Email Address</label>
+                                            <input id="email" type="text" placeholder="" required>
+                                        </div>
+                                        <div class="user-submit">
+                                            <label for="number">Phone Number</label>
+                                            <input id="number" type="text" placeholder="" required>
+                                        </div>
+                                    </div>
+                                    <div class="submit-wrap">
+                                        <div class="user-submit1">
+                                            <label for="description">Description</label>
+                                            <textarea name="" id="description" rows="5"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="send-button">
+                                        <button type="submit" class="Quote-btn">Send Now</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =================counting-end===================== -->
+    <!-- ===================footer-start=================== -->
+  <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="footer-logo-panel">
+                        <a class="footer-logo" href="">
+                            <img src="assets/logo/footer-logo.png" alt="" />
+                        </a>
+                        <p>Professional demolition, abatement, and environmental remediation services across Alberta.
+                        </p>
+                        <div class="social-media-icon">
+                            <a href="">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-6 col-sm-6 col-12">
+                    <div class="footer-contact">
+                        <h3>Contact Us</h3>
+                        <ul>
+                            <li>
+                                <a href="tel:+15879843735">
+                                    <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                                    <p>587-984-3735</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:info@clmsdemolition.ca"><i class="fa-solid fa-envelope"
+                                        aria-hidden="true"></i>
+                                    <p>info@clmsdemolition.ca</p>
+                                </a>
+                            </li>
+                            <li>
+                                <address>
+                                    <i class="fa-solid fa-location-dot" aria-hidden="true">
+
+                                    </i>
+                                    <p>Alberta,
+                                        Canada
+                                    </p>
+                                </address>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-6 col-sm-6 col-12">
+                    <div class="footer-links">
+                        <h3>Quick Links</h3>
+                        <div class="Footer-navigation" aria-label="Footer-navigation">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="">About</a></li>
+                                <li><a href="">Services</a></li>
+                                <li><a href="">Showcase</a></li>
+                                <li><a href="">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="footer-links">
+                        <h3>Subscribe Our Newsletter</h3>
+                        <form class="subscribe" action="" method="post">
+                            <div>
+                                <input class="email-address" type="text" name="email" placeholder="Email Address"
+                                    required>
+                            </div>
+                            <button type="submit" class="Quote-btn">
+                                Subscribe Now
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-5 col-sm-4 col-12">
+                        <div class="copyright-content">
+                            <span>© 2026</span>
+                            <a href="javascript:void(0)" class="all-rights">
+                                All rights reserved.
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-7 col-sm-8 col-12">
+                        <div class="footer-credit">
+                            <span>Design &amp; Developed by</span>
+                            <a href="https://www.ehtwebaid.com/" class="company-name">
+                                EHT Webiad Pvt Ltd.
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <!-- ===================footer-end=================== -->
+    <!-- ===================js-link=================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <!-- ==================js-link==================== -->
+</body>
+
+</html>
